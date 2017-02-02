@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title></title>
- <link href="http://mmcbride1007.github.io/joe-and-kelly-wedding/atom.xml" rel="self"/>
- <link href="http://mmcbride1007.github.io/joe-and-kelly-wedding/"/>
- <updated>2017-02-01T23:55:07-06:00</updated>
- <id>http://mmcbride1007.github.io/joe-and-kelly-wedding</id>
+ <link href="/joe-and-kelly-wedding/atom.xml" rel="self"/>
+ <link href="/joe-and-kelly-wedding/"/>
+ <updated>2017-02-01T23:59:23-06:00</updated>
+ <id></id>
  <author>
    <name></name>
    <email></email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Joe is a flamer. Here's why...</title>
-   <link href="http://mmcbride1007.github.io/joe-and-kelly-wedding/2016/01/01/my-first-post.html"/>
+   <link href="/joe-and-kelly-wedding/2016/01/01/my-first-post.html"/>
    <updated>2016-01-01T04:00:00-06:00</updated>
-   <id>http://mmcbride1007.github.io/joe-and-kelly-wedding/2016/01/01/my-first-post</id>
+   <id>/2016/01/01/my-first-post</id>
    <content type="html">&lt;style&gt;
   body {
     animation: pulse 1s infinite;
