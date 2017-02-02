@@ -139,7 +139,7 @@ gulp.task('build', cb => {
 })
 
 gulp.task('compile', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-cname', 'copy-to-docs', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-to-docs', cb) // add 'copy-cname' right before 'copy-to-docs' once ready
 })
 
 // build files and watch for changes
