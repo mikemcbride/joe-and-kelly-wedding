@@ -83,9 +83,7 @@ gulp.task('jekyll-build-dev', done => {
 })
 
 // trigger BrowserSync reload upon rebuild
-gulp.task('jekyll-rebuild', ['jekyll-build-dev'], () => {
-  browserSync.reload()
-})
+gulp.task('jekyll-rebuild', ['jekyll-build-dev'], () => browserSync.reload())
 
 // start BrowserSync
 gulp.task('browser-sync', ['jekyll-build-dev'], () => {
@@ -145,7 +143,7 @@ gulp.task('build', cb => {
 })
 
 gulp.task('compile', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-to-docs', cb) // add 'copy-cname' right before 'copy-to-docs' once ready
+  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-cname', 'copy-to-docs', cb)
 })
 
 // build files and watch for changes

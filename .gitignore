@@ -1,6 +1,6 @@
 _site
 .jekyll-metadata
-assets
+/assets
 .DS_Store
 node_modules
 npm-debug.log
