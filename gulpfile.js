@@ -129,8 +129,8 @@ gulp.task('clean', () => {
   return del(['assets', 'docs'])
 })
 
-gulp.task('copy-cname', () => {
-  return gulp.src('config/CNAME').pipe(gulp.dest('docs'))
+gulp.task('copy-config', () => {
+  return gulp.src('config/**', {dot: true}).pipe(gulp.dest('docs'))
 })
 
 gulp.task('copy-to-docs', () => {
@@ -143,7 +143,7 @@ gulp.task('build', cb => {
 })
 
 gulp.task('compile', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-cname', 'copy-to-docs', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images'], 'jekyll-build', 'copy-config', 'copy-to-docs', cb)
 })
 
 // build files and watch for changes
