@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title></title>
+ <link href="/joe-and-kelly-wedding/atom.xml" rel="self"/>
+ <link href="/joe-and-kelly-wedding/"/>
+ <updated>2017-02-05T00:44:49-06:00</updated>
+ <id></id>
+ <author>
+   <name></name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Joe is a flamer. Here's why...</title>
+   <link href="/joe-and-kelly-wedding/2016/01/01/my-first-post.html"/>
+   <updated>2016-01-01T04:00:00-06:00</updated>
+   <id>/2016/01/01/my-first-post</id>
+   <content type="html">&lt;style&gt;
+  body {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+  0%, 100%  {
+    background-color: lime;
+  }
+  33% {
+    background-color: blue;
+  }
+  66% {
+    background-color: #ff0080;
+  }
+
+  }
+&lt;/style&gt;
+
+&lt;iframe id=&quot;rick-roll&quot; width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/oHg5SJYRHA0?enablejsapi=1&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</content>
+ </entry>
+ 
+
+</feed>
