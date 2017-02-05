@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title:  "Joe is a flamer. Here's why..."
 date:   2016-01-01 10:00:00
 previewImage: "/assets/img/cat.jpg"

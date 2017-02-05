@@ -14,3 +14,7 @@ exclude:
   - README.md
   - config
   - npm-debug.log
+  
+collections:
+  routes:
+    output: true

@@ -1,20 +1,13 @@
-var tag = document.createElement('script');
-tag.id = 'iframe-demo';
-tag.src = 'https://www.youtube.com/iframe_api';
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+window.onload = function () {
+  var menuOpen = document.getElementById('menu-open')
+  var menuClose = document.getElementById('menu-close')
+  var navList = document.getElementById('nav-list')
 
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('rick-roll', {
-      playerVars: { 'autoplay': 1, 'controls': 0 },
-      events: {
-        'onReady': onPlayerReady
-      }
-  });
-}
-
-function onPlayerReady(event) {
-  event.target.setVolume(100);
-  event.target.playVideo();
+  menuOpen.onclick = function (e) {
+    navList.classList.add('open')
+  }
+  
+  menuClose.onclick = function (e) {
+    navList.classList.remove('open')
+  }
 }

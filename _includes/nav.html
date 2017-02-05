@@ -1,0 +1,25 @@
+<nav class="dn-l flex justify-between items-center bb b--white-10 relative z-3">
+  <span class="f6 ttu dib pa3 gold">Joe + Kelly</span>
+  <span class="f6 ttu dib pa3 pointer" id="menu-open">Menu</span>
+  <div id="nav-list" class="fixed w-100 bg-near-black">
+    <div class="f6 ttu pa3 pr4 bb b--white-10 flex items-center justify-end pointer" id="menu-close">
+      <span class="dib mr1">Close</span>
+      <span class="absolute right-1 f4">&times;</span>
+    </div>
+    {% assign pages = site.pages | sort: 'order' %}
+    {% for link in pages %}
+      {% if link.navEnabled == true %}
+      <a class="f6 nav-link ttu db pa3 tr" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>
+
+<nav class="dn flex-l items-center justify-center bb b--white-10">
+  {% assign pages = site.pages | sort: 'order' %}
+  {% for link in pages %}
+    {% if link.navEnabled == true %}
+    <a class="f6 nav-link ttu dib pv3 ph2 ph3-ns {% if page.url == link.permalink %}active{% endif %}" href="{{ link.url | prepend: site.baseurl }}">{{ link.title }}</a>
+    {% endif %}
+  {% endfor %}
+</nav>
