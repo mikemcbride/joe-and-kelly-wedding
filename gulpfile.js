@@ -3,6 +3,7 @@
 const cp = require('child_process')
 const gulp = require('gulp')
 const postcss = require('gulp-postcss')
+const purify = require('purify-css')
 const autoprefixer = require('autoprefixer')
 const cleancss = require('gulp-clean-css')
 const sourcemaps = require('gulp-sourcemaps')
@@ -98,13 +99,23 @@ gulp.task('browser-sync', ['jekyll-build-dev'], () => {
 // compile and minify CSS
 gulp.task('styles', () => {
   return gulp.src('dev_assets/styles/main.pcss')
-    .pipe(sourcemaps.init())
     .pipe(postcss(plugins))
     .pipe(cleancss(cleanCssOpts))
     .pipe(rename('main.min.css'))
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('assets/styles'))
     .pipe(browserSync.reload({ stream: true }))
+})
+
+// remove unused CSS
+gulp.task('purify-css', () => {
+  const content = ['_site/assets/**/*.js', '_site/**/*.html']
+  const css = ['_site/assets/styles/main.min.css']
+  const opts = {
+    output: '_site/assets/styles/main.min.css',
+    minify: true
+  }
+  
+  purify(content, css, opts)
 })
 
 // concatenate and minify javascript
@@ -143,7 +154,7 @@ gulp.task('build', cb => {
 })
 
 gulp.task('compile', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build', 'copy-config', 'copy-to-docs', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build', 'purify-css', 'copy-config', 'copy-to-docs', cb)
 })
 
 // build files and watch for changes
