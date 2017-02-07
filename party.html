@@ -6,4 +6,46 @@ permalink: /wedding-party/
 navEnabled: true
 ---
 
-<p class="lh-copy">Joe and Kelly have friends. Well, Kelly does. Joe has his brothers and Mike who doesn't really count. Either way, their names are listed below for you to read.</p>
+<p class="lh-copy mb4">Joe and Kelly have friends. Well, Kelly does. Joe has his brothers (and Mike who doesn't really count). Either way, their names are listed below for you to read.</p>
+
+<section class="mb4 mb5-ns">
+  <h1 class="f3 b ttu gold mt0 pb2 bb bw1">Bridesmaids</h1>
+  <div class="flex flex-wrap">
+    {% for bm in site.data.party.bridesmaids %}
+    <article class="w-100 w-50-ns pa3">
+      <div class="ba b--white-10 br2 pa3 pa4-ns h-100">
+        <div class="tc">
+          <span class="br-100 h4 w4 dib ba b--white-20 pa2 mb4">
+            <span class="w-100 h-100 br-100 dib cover bg-center party-pic" style="background-image: url({{ site.baseurl | append: '/assets/img/' | append: bm.image }})"></span>
+          </span>
+          <h1 class="f3 mb3">{{ bm.name }}</h1>
+          <h2 class="f5 fw4 mv0 dib ph2 white-60">{{ bm.title }}</h2>
+          <div class="w-60 center bb bw1 b--white-20 mv3"></div>
+        </div>
+        <p class="lh-copy measure center f6">{{ bm.bio }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="mb4 mb5-ns">
+  <h1 class="f3 b ttu gold mt0 pb2 bb bw1">Groomsmen</h1>
+  <div class="flex flex-wrap">
+    {% for gm in site.data.party.groomsmen %}
+    <article class="w-100 w-50-ns pa3">
+      <div class="ba b--white-10 br2 pa3 pa4-ns h-100">
+        <div class="tc">
+          <span class="br-100 h4 w4 dib ba b--white-20 pa2 mb4">
+            <span class="w-100 h-100 br-100 dib cover bg-center party-pic" style="background-image: url({{ site.baseurl | append: '/assets/img/' | append: gm.image }})"></span>
+          </span>
+          <h1 class="f3 mb3">{{ gm.name }}</h1>
+          <h2 class="f5 fw4 mv0 dib ph2 white-60">{{ gm.title }}</h2>
+          <div class="w-60 center bb bw1 b--white-20 mv3"></div>
+        </div>
+        <p class="lh-copy measure center f6">{{ gm.bio }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
