@@ -3,7 +3,7 @@ markdown: kramdown
 baseurl: "/joe-and-kelly-wedding"
 
 # your site URL goes here
-# url: ""
+url: "http://mmcbride1007.github.io/joe-and-kelly-wedding"
 
 port: 4000
 exclude:
