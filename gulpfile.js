@@ -77,17 +77,11 @@ gulp.task('jekyll-build', done => {
     .on('close', done)
 })
 
-gulp.task('jekyll-build-dev', done => {
-  browserSync.notify('Building Jekyll')
-  return cp.spawn('bundle', ['exec', 'jekyll', 'build', '--config', ['_config.yml', '_config_dev.yml']], {stdio: 'inherit'})
-    .on('close', done)
-})
-
 // trigger BrowserSync reload upon rebuild
-gulp.task('jekyll-rebuild', ['jekyll-build-dev'], () => browserSync.reload())
+gulp.task('jekyll-rebuild', ['jekyll-build'], () => browserSync.reload())
 
 // start BrowserSync
-gulp.task('browser-sync', ['jekyll-build-dev'], () => {
+gulp.task('browser-sync', ['jekyll-build'], () => {
   browserSync({
     server: {
       baseDir: '_site'
@@ -150,7 +144,7 @@ gulp.task('copy-to-docs', () => {
 
 // build process to be run in sequence to ensure everything runs in proper order
 gulp.task('build', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build-dev', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build', cb)
 })
 
 gulp.task('compile', cb => {

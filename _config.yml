@@ -1,6 +1,6 @@
 # Build settings
 markdown: kramdown
-baseurl: "/joe-and-kelly-wedding"
+baseurl: ""
 
 # your site URL goes here
 url: "http://mmcbride1007.github.io/joe-and-kelly-wedding"
@@ -14,7 +14,3 @@ exclude:
   - README.md
   - config
   - npm-debug.log
-  
-collections:
-  routes:
-    output: true
