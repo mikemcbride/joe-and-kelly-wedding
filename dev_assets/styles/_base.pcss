@@ -30,6 +30,10 @@ body {
 a {
   color: var(--link-color);
   text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 ul, ol {
@@ -50,6 +54,7 @@ li {
   
   &:hover {
     color: var(--gold);
+    text-decoration: none;
   }
   
   &.active {
@@ -75,4 +80,16 @@ li {
 
 .gold { color: var(--gold); }
 
+a.hover-gold {
+  color: var(--text-main);
+  
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--gold);
+    text-decoration: none;
+  }
+}
+
 .party-pic { filter: grayscale(100%); }
+.address-icon { width: 1.5rem; }

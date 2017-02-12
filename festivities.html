@@ -6,10 +6,65 @@ permalink: /festivities/
 navEnabled: true
 ---
 <section class="mb4 mb5-ns">
-  <h1 class="f3 b ttu gold mt0 pb2 bb bw1">Ceremony</h1>
-  <p class="b f2"><span class="gold">WARNING!</span> This is a FULL CATHOLIC MASS.</p>
+  <h1 class="f3 b ttu gold mt0 mb4 pb2 bb bw1">Ceremony</h1>
+  <p class="mb4">The ceremony will be a celebration of the Sacrament of Holy Matrimony at Guardian Angels Catholic Church.</p>
+  <h3 class="f4 b ttu gold mb3">{{ site.data.ceremony.venue }}</h3>
+  <div class="ph3-l f6 f5-ns">
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
+      <span class="flex-auto"><a class="hover-gold" href="{{ site.data.ceremony.map.url }}" target="_blank">{{ site.data.ceremony.address }}</a></span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
+      <span class="flex-auto">{{ site.data.ceremony.date }}</span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-clock f4"></span>
+      <span class="flex-auto">{{ site.data.ceremony.time }}</span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
+      <span class="flex-auto"><a href="http://www.{{ site.data.ceremony.website }}" class="hover-gold" target="_blank">{{ site.data.ceremony.website }}</a></span>
+    </div>
+    
+    <div class="mt4 pa2 ph3-ns">
+      <div class="db dn-ns">{{ site.data.ceremony.map.embed.small }}</div>
+      <div class="dn db-m">{{ site.data.ceremony.map.embed.medium }}</div>
+      <div class="dn db-l">{{ site.data.ceremony.map.embed.large }}</div>
+    </div>
+    
+  </div>
 </section>
 
 <section class="mb4 mb5-ns">
-  <h1 class="f3 b ttu gold mt0 pb2 bb bw1">Reception</h1>
+  <h1 class="f3 b ttu gold mt0 mb4 pb2 bb bw1">Reception</h1>
+  <p class="mb3">The reception will begin with a cocktail hour at 5:00, with dinner starting around 6:00pm.</p>
+  <p class="mb3"><span class="dib b gold ttu">NOTE:</span> There is limited parking available at the venue. We highly suggest using Uber to get to and from the reception. In addition to limited parking, our top priority is for everyone to have a fun and SAFE time, so we would love for everyone to use this service instead of driving.</p>
+  <p class="mb3">To encourage this, we have a code you can use for a free Uber ride: <span class="gold">JOEISAFLAMER</span></p>
+  <h3 class="f4 b ttu gold mb3 mt4">{{ site.data.reception.venue }}</h3>
+  <div class="ph3-l f6 f5-ns">
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
+      <span class="flex-auto"><a class="hover-gold" href="{{ site.data.reception.map.url }}" target="_blank">{{ site.data.reception.address }}</a></span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
+      <span class="flex-auto">{{ site.data.reception.date }}</span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-clock f4"></span>
+      <span class="flex-auto">{{ site.data.reception.time }}</span>
+    </div>
+    <div class="flex items-center pv2 pv3-l">
+      <span class="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
+      <span class="flex-auto"><a href="http://www.{{ site.data.reception.website }}" class="hover-gold" target="_blank">{{ site.data.reception.website }}</a></span>
+    </div>
+    
+    <div class="mt4 pa2 ph3-ns">
+      <div class="db dn-ns">{{ site.data.reception.map.embed.small }}</div>
+      <div class="dn db-m">{{ site.data.reception.map.embed.medium }}</div>
+      <div class="dn db-l">{{ site.data.reception.map.embed.large }}</div>
+    </div>
+    
+  </div>
 </section>

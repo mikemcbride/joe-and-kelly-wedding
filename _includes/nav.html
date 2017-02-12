@@ -1,10 +1,9 @@
 <nav class="dn-l flex justify-between items-center bb b--white-10 relative z-3">
   <a class="f6 b ttu dib pa3 gold" href="{{ site.url }}">Joe + Kelly</a>
-  <span class="f6 b ttu dib pa3 pointer" id="menu-open">Menu</span>
+  <span class="f6 b ttu dib pa3 pointer" id="menu-open">Menu<i class="icon icon-menu ml2"></i></span>
   <div id="nav-list" class="fixed w-100 bg-near-black">
-    <div class="f6 b ttu pa3 pr4 bb b--white-10 flex items-center justify-end pointer" id="menu-close">
-      <span class="dib mr1">Close</span>
-      <span class="absolute right-1 f4">&times;</span>
+    <div class="f6 b ttu pa3 bb b--white-10 flex items-center justify-end pointer" id="menu-close">
+      <span class="dib">Close<i class="icon icon-close ml2"></i></span>
     </div>
     {% assign pages = site.pages | sort: 'order' %}
     {% for link in pages %}

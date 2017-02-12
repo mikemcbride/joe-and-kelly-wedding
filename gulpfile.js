@@ -112,6 +112,12 @@ gulp.task('purify-css', () => {
   purify(content, css, opts)
 })
 
+// copy font files
+gulp.task('fonts', () => {
+  return gulp.src('dev_assets/styles/fonts/**')
+    .pipe(gulp.dest('assets/styles/fonts'))
+})
+
 // concatenate and minify javascript
 gulp.task('scripts', () => {
   return gulp.src(['dev_assets/js/*.js'])
@@ -144,11 +150,11 @@ gulp.task('copy-to-docs', () => {
 
 // build process to be run in sequence to ensure everything runs in proper order
 gulp.task('build', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts', 'fonts'], 'jekyll-build', cb)
 })
 
 gulp.task('compile', cb => {
-  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts'], 'jekyll-build', 'purify-css', 'copy-config', 'copy-to-docs', cb)
+  runSequence('bundle-install', 'clean', ['styles', 'images', 'scripts', 'fonts'], 'jekyll-build', 'purify-css', 'copy-config', 'copy-to-docs', cb)
 })
 
 // build files and watch for changes
