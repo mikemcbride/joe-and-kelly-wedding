@@ -5,5 +5,36 @@ order: 4
 permalink: /accommodations/
 navEnabled: true
 ---
-
-<p class="lh-copy">Joe and Kelly booked a hotel. They didn't pay for it, really they just told some hotel people that there would be a large number of people they know coming and staying at their hotel all on the same date. If you have severe FOMO you can join this group and also stay at the hotel. It might be fun. They probably have an indoor pool.</p>
+<h3 class="f4 b ttu gold mb3">{{ site.data.hotel.name }}</h3>
+<div class="ph3-l f6 f5-ns">
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
+    <span class="flex-auto"><a class="hover-gold" href="{{ site.data.hotel.map.url }}" target="_blank">{{ site.data.hotel.address }}</a></span>
+  </div>
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-phone f4"></span>
+    <span class="flex-auto"><a href="tel:{{ site.data.hotel.website.phone }}" class="hover-gold" target="_blank">{{ site.data.hotel.phone }}</a></span>
+  </div>
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-code f4"></span>
+    <span class="flex-auto">Booking Code: {{ site.data.hotel.booking.code }}</span>
+  </div>
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-link f4"></span>
+    <span class="flex-auto"><a href="tel:{{ site.data.hotel.booking.code }}" target="_blank">Click here to book</a></span>
+  </div>
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
+    <span class="flex-auto"><a href="{{ site.data.hotel.website.url }}" class="hover-gold" target="_blank">{{ site.data.hotel.website.display }}</a></span>
+  </div>
+  <div class="flex items-center pv2 pv3-l">
+    <span class="gold dib address-icon mr3 mr4-ns tc icon icon-info f4"></span>
+    <span class="flex-auto">{{ site.data.hotel.notes }}</span>
+  </div>
+  
+  <div class="mt4 pa2 ph3-ns">
+    <div class="db dn-ns">{{ site.data.hotel.map.embed.small }}</div>
+    <div class="dn db-m">{{ site.data.hotel.map.embed.medium }}</div>
+    <div class="dn db-l">{{ site.data.hotel.map.embed.large }}</div>
+  </div>
+</div>
