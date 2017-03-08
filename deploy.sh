@@ -1,5 +1,4 @@
 cp ./CNAME ./build
-cp ./.htaccess ./build
 git commit -am "save local changes"
 git checkout -B gh-pages
 git add -f build
