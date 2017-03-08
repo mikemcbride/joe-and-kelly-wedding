@@ -2,6 +2,7 @@
   "name": "joe-and-kelly-wedding",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://mmcbride1007.github.io/joe-and-kelly-wedding",
   "dependencies": {
       "history": "^4.5.0",
       "re-base": "^2.5.1",
