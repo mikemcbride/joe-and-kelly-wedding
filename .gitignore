@@ -1,7 +1,0 @@
-_site
-.jekyll-metadata
-/assets
-.DS_Store
-node_modules
-npm-debug.log
-Gemfile.lock
