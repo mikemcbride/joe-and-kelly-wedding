@@ -2,12 +2,13 @@ import React from 'react'
 
 export default ({ member }) => {
   const bgImage = require(`../img/${member.image}`)
+  
   return (
     <article className="w-100 w-50-l pv3 ph3-l">
       <div className="ba b--white-10 br1 pa3 pa4-ns h-100">
         <div className="tc">
           <span className="br-100 h4 w4 dib ba b--white-20 pa2 mb4">
-            <span className="w-100 h-100 br-100 dib cover bg-center party-pic" style={{ backgroundImage: `url(${bgImage}` }}></span>
+            <img className="w-100 h-100 dib br-100 object-cover party-pic" src={bgImage} alt={member.name} />
           </span>
           <h1 className="f3 mb3">{ member.name }</h1>
           <h2 className="f5 mv0 white-60">{ member.title }</h2>
