@@ -8,7 +8,7 @@ export default ({ member }) => {
       <div className="ba b--white-10 br1 pa3 pa4-ns h-100">
         <div className="tc">
           <span className="br-100 h4 w4 dib ba b--white-20 pa2 mb4">
-            <img className="w-100 h-100 dib br-100 object-cover party-pic" src={bgImage} alt={member.name} />
+            <img className="w-100 h-100 dib br-100 object-cover grayscale" src={bgImage} alt={member.name} />
           </span>
           <h1 className="f3 mb3">{ member.name }</h1>
           <h2 className="f5 mv0 white-60">{ member.title }</h2>
