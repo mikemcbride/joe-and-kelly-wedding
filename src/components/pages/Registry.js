@@ -17,8 +17,8 @@ export const Registry = () => {
   return (
     <Page>
       <p>Joe and Kelly are registered at Amazon and Bed Bath and Beyond. Buy them stuff.</p>
-      <div className="white-10 hover-gold w-100 mw8 h5">
-        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="100%" id="svg1936">
+      <div className="white-10 hover-gold">
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="602.27954" height="181.49922" id="svg1936">
           <defs id="defs1938" />
           <g transform="translate(144.53434,-649.87719)" id="layer1">
             <g transform="translate(7.081691,7.081144)" id="g1967">
