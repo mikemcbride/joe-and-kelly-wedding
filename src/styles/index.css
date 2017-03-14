@@ -797,6 +797,12 @@ a.hover-gold:hover { color: #ad974f; text-decoration: none; }
 a.hover-gold:focus { color: #ad974f; text-decoration: none; }
 a.hover-gold:active { color: #ad974f; text-decoration: none; }
 .grayscale { -webkit-filter: grayscale( 100% ); filter: grayscale( 100% ); }
+.anti-grayscale-hover { transition: all .12s ease; -webkit-filter: grayscale( 100% ); filter: grayscale( 100% ); }
+.anti-grayscale-hover:hover { -webkit-filter: grayscale( 0% ); filter: grayscale( 0% ); }
+@media screen and (min-width:30em) {
+ .anti-grayscale-hover-ns { transition: all .12s ease; -webkit-filter: grayscale( 100% ); filter: grayscale( 100% ); }
+ .anti-grayscale-hover-ns:hover { -webkit-filter: grayscale( 0% ); filter: grayscale( 0% ); }
+}
 .address-icon { min-width: 24px; }
 .object-cover { object-fit: cover; }
 @font-face { font-family: 'icomoon'; src: url( 'fonts/icomoon.eot?33kxu4' ); src: url( 'fonts/icomoon.eot?33kxu4#iefix' ) format( 'embedded-opentype' ), url( 'fonts/icomoon.ttf?33kxu4' ) format( 'truetype' ), url( 'fonts/icomoon.woff?33kxu4' ) format( 'woff' ), url( 'fonts/icomoon.svg?33kxu4#icomoon' ) format( 'svg' ); font-weight: normal; font-style: normal; }
