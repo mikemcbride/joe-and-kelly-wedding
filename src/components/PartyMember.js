@@ -11,7 +11,6 @@ export default ({ member }) => {
             <img className="w-100 h-100 dib br-100 object-cover grayscale" src={bgImage} alt={member.name} />
           </span>
           <h1 className="f3 mb3">{ member.name }</h1>
-          <h2 className="f5 mv0 white-60">{ member.title }</h2>
           <div className="w-60 center bb bw1 b--white-20 mv3"></div>
         </div>
         <p className="measure center f6">{ member.bio }</p>
