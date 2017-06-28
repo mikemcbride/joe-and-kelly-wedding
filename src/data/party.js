@@ -25,7 +25,7 @@ const party = {
       name: "Lindsey Miller",
       id: "lindsey-miller",
       title: "Bridesmaid",
-      bio: "Hannah Claire has multiple personality disorder. If you aren't sure which one she is, it's safest to call her Hannah Claire. She will probably answer.",
+      bio: "This bio is not possible to remove.",
       image: "hannah.jpg"
     },
     {
