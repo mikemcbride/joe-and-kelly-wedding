@@ -49,13 +49,13 @@ class Rsvp extends React.Component {
     if (item.responded === true) {
       respondedIcon = <span className="w2 dib gold"><i className="icon icon-check"></i></span>
     } else {
-      respondedIcon = <span className="w2 dib gold"><i className="icon icon-close"></i></span>
+      respondedIcon = <span className="w2 dib gold"></span>
     }
 
     return (
-      <div className="ph2 pv3 ph3-ns gold bb b--white-10" key={item.id}>
+      <li className="last-child-no-border ph3 pv3 gold bb b--white-20" key={item.id}>
         {respondedIcon}{item.lastName}, {item.firstName}
-      </div>
+      </li>
     )
   }
   
@@ -73,10 +73,14 @@ class Rsvp extends React.Component {
           </fieldset>
         </form>
         
-        <div className="ba b--white-10 br1">
-          <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">Results</h3>
-          {this.state.filteredRsvps.map(this.renderFilteredRsvps)}
-        </div>
+        {this.state.filteredRsvps.length > 0 &&
+          <article className="pa4-ns mw7 center">
+            <h3 className="f5 f4-ns fw4 gold center">Results</h3>
+            <ul className="list pl0 ml0 center ba b--white-20 br2">
+              {this.state.filteredRsvps.map(this.renderFilteredRsvps)}
+            </ul>
+          </article>
+        }
       </Page>
     )
   }
