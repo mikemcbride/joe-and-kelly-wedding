@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import base from '../base'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { Home, Story, Party, Festivities, Accommodations, Attractions, Registry, Rsvp } from './pages'
+import { Home, Story, Party, Festivities, Accommodations, Attractions, Registry } from './pages'
+import Rsvp from './pages/Rsvp'
 
 class App extends Component {
   render() {

@@ -1,19 +1,85 @@
 import React from 'react'
 import Page from '../Page'
+import base from '../../base'
+import { sortByKey, objectHasValue } from '../../helpers'
 
-export const Rsvp = () => (
-  <Page>
-    <p>Rsvp. This will be fun.</p>
-    <p>Really high-level flow idea here:</p>
-    <ul>
-      <li>Paragraph at top explaining how to pull up your RSVP record</li>
-      <li>Code will be a hash of street address + last name + zip code. Ex: mine would be 1218-mcbride-63021. Probably good to give a generic example showing a name + address and what the code would be.</li>
-      <li>Big input field to add the code, plus a "go" button or something to pull up reservation record</li>
-      <li>After searching, all records matching that RSVP criteria will display. Will allow them to edit as many times as they want. Not going to check for "have they already RSVP'd". This would allow for people living with their parents to edit their responses separately or change the RSVP.</li>
-      <li>With that in mind, probably need to do two things: some sort of admin page where Joe and Kelly can see all RSVP records and filter by response and all that, and also be able to lock the RSVP page after a certain date so people can't change their RSVP last minute without telling anyone.</li>
-      <li>Each RSVP record will have some basic data represented. Your name will be shown, a check box for attending (yes/no), and if you are allowed to bring a guest you will get an extra item to fill in that says "bringing a guest?" (again, yes/no) and if you choose "yes", it will ask for the guest's first and last name</li>
-      <li>Per Joe and Kelly's request, we do not want to do the whole "how many people coming" free form field in hopes that it will avoid difficult conversations with certain family members. They will clearly see the list of people invited and know who can and cannot come.</li>
-      <li>Big fat Save button at the bottom of the form. Submitting will sync data back to Firebase and they'll get a "success" message upon successful save.</li>
-    </ul>
-  </Page>
-)
+class Rsvp extends React.Component {
+  constructor() {
+    super()
+    this.handleChange = this.handleChange.bind(this)
+    this.handleClick = this.handleClick.bind(this)
+    this.renderFilteredRsvps = this.renderFilteredRsvps.bind(this)
+    
+    this.state = {
+      rsvps: {},
+      searchTerm: '',
+      filteredRsvps: []
+    }
+  }
+  
+  componentWillMount () {
+    this.ref = base.syncState('rsvps', {
+      context: this,
+      state: 'rsvps'
+    })
+  }
+
+  componentWillUnmount () {
+    base.removeBinding(this.ref)
+  }
+  
+  handleChange(e) {
+    this.setState({searchTerm: e.target.value})
+  }
+  
+  handleClick(e) {
+    const ids = Object.keys(this.state.rsvps)
+    const newList = ids.reduce((arr, id) => {
+      const newItem = { ...this.state.rsvps[id], id }
+      const retVal = objectHasValue(newItem, this.state.searchTerm) ? [...arr, newItem] : [...arr]
+      return sortByKey(retVal, 'lastName')
+    }, [])
+    
+    this.setState({filteredRsvps: newList})
+  }
+  
+  renderFilteredRsvps(item) {
+    let respondedIcon
+
+    if (item.responded === true) {
+      respondedIcon = <span className="w2 dib gold"><i className="icon icon-check"></i></span>
+    } else {
+      respondedIcon = <span className="w2 dib gold"><i className="icon icon-close"></i></span>
+    }
+
+    return (
+      <div className="ph2 pv3 ph3-ns gold bb b--white-10" key={item.id}>
+        {respondedIcon}{item.lastName}, {item.firstName}
+      </div>
+    )
+  }
+  
+  render() {
+    return (
+      <Page>
+        <p className="mb3">To find your RSVP, put your name in the box and click "Search". When the results show up, please pick yours from the list and fill in the fields. When finished, click Submit. If you have responded, your RSVP will have a check mark next to it.</p>
+        <form className="mw7 center pa4-ns mb3">
+          <fieldset className="cf bn ma0 pa0">
+            <legend className="pa0 f5 f4-ns mb3 gold">Find your RSVP</legend>
+            <div className="cf">
+              <input className="f6 f5-l input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br2-ns br--left-ns" placeholder="Your Email Address" type="text" name="email-address" value={this.state.searchTerm} onChange={this.handleChange} />
+              <button className="f6 f5-l fw5 button-reset fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="button" onClick={this.handleClick}>Search</button>
+            </div>
+          </fieldset>
+        </form>
+        
+        <div className="ba b--white-10 br1">
+          <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">Results</h3>
+          {this.state.filteredRsvps.map(this.renderFilteredRsvps)}
+        </div>
+      </Page>
+    )
+  }
+}
+
+export default Rsvp
