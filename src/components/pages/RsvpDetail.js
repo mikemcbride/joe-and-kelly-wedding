@@ -115,7 +115,7 @@ class RsvpDetail extends React.Component {
             </div>
             
             {
-              !rsvp.getsGuest &&
+              rsvp.getsGuest &&
               <div className="flex flex-column items-start mb3">
                 <h4 className="f5 b gold">Are you bringing a guest?</h4>
                 <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setGuestAttending(true)}>
