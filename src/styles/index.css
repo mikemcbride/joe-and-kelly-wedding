@@ -793,6 +793,7 @@ li > ul, li > ol { margin-bottom: 0; }
 .gold { color: #ad974f; }
 .bg-gold { background-color: #ad974f; }
 .b--gold { border-color: #ad974f; }
+.b--gold-focus:focus { border-color: #ad974f; }
 .hover-gold:hover { color: #ad974f; }
 a.hover-gold { color: #eaeaea; }
 a.hover-gold:hover { color: #ad974f; text-decoration: none; }
@@ -808,7 +809,8 @@ a.hover-gold:active { color: #ad974f; text-decoration: none; }
 .address-icon { min-width: 24px; }
 .object-cover { object-fit: cover; }
 .last-child-no-border:last-child { border: 0; }
-@font-face { font-family: 'icomoon'; src:  url('fonts/icomoon.eot?3rt7if'); src:  url('fonts/icomoon.eot?3rt7if#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?3rt7if') format('truetype'), url('fonts/icomoon.woff?3rt7if') format('woff'), url('fonts/icomoon.svg?3rt7if#icomoon') format('svg'); font-weight: normal; font-style: normal; }
+.no-underline-hover:focus, .no-underline-hover:hover { text-decoration: none; }
+@font-face { font-family: 'icomoon'; src:  url('fonts/icomoon.eot?4gblba'); src:  url('fonts/icomoon.eot?4gblba#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?4gblba') format('truetype'), url('fonts/icomoon.woff?4gblba') format('woff'), url('fonts/icomoon.svg?4gblba#icomoon') format('svg'); font-weight: normal; font-style: normal;}
 .icon { font-family: 'icomoon' !important; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 .icon.icon-drink:before { content: "\f000"; }
 .icon-check:before { content: "\f00c"; }
@@ -823,6 +825,8 @@ a.hover-gold:active { color: #ad974f; text-decoration: none; }
 .icon.icon-food:before { content: "\f0f5"; }
 .icon.icon-calendar:before { content: "\f133"; }
 .icon.icon-phone:before { content: "\f095"; }
+.icon-circle-o:before {content: "\f10c";}
+.icon-dot-circle-o:before {content: "\f192";}
 /* end custom styles */
 /* tachyons media query classes */
 @media screen and (min-width:30em) {

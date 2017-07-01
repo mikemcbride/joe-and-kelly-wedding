@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Home, Story, Party, Festivities, Accommodations, Attractions, Registry } from './pages'
 import Rsvp from './pages/Rsvp'
+import RsvpDetail from './pages/RsvpDetail'
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route exact path='/attractions' component={Attractions} />
           <Route exact path='/registry' component={Registry} />
           <Route exact path='/rsvp' component={Rsvp} />
+          <Route exact path='/rsvp/:rsvpId' component={RsvpDetail} />
           <Route component={Home} />
         </Switch>
   		</BrowserRouter>
