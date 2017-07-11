@@ -13,7 +13,7 @@ class RsvpDetail extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     
     this.state = {
-      rsvp: {},
+      group: {},
       errorMessage: '',
       submitted: false
     }
@@ -23,7 +23,7 @@ class RsvpDetail extends React.Component {
     base.fetch(`rsvps/${this.props.match.params.rsvpId}`, {
       context: this
     }).then(data => {
-      if (!data.firstName) {
+      if (Object.keys(data).length === 0) {
         this.setState({
           rsvp: {},
           submitted: 0,
@@ -31,43 +31,57 @@ class RsvpDetail extends React.Component {
         })
         console.error('More than likely, this RSVP id does not exist.')
       } else {
-        this.setState({ rsvp: data })
+        this.setState({ group: data })
       }
     }).catch(err => {
       this.setState({
-        rsvp: {},
+        group: {},
         errorMessage: 'Unable to load this RSVP record. Please try again later.'
       })
       console.error(err)
     })
   }
   
-  setAttending(val) {
-    if (val !== this.state.rsvp.attending) {
-      const rsvp = Object.assign(this.state.rsvp, { attending: val })
-      this.setState({ rsvp })
+  setAttending(id, val) {
+    if (val !== this.state.group[id].attending) {
+      const group = {...this.state.group}
+      group[id].attending = val
+      
+      this.setState({ group })
     }
   }
   
-  setGuestAttending(val) {
-    if (val !== this.state.rsvp.guestAttending) {
-      const rsvp = Object.assign(this.state.rsvp, { guestAttending: val })
-      this.setState({ rsvp })
+  setGuestAttending(id, val) {
+    if (val !== this.state.group[id].guestAttending) {
+      const group = {...this.state.group}
+      group[id].guestAttending = val
+      
+      if (val === false) {
+        group[id].guestName = ""
+      }
+      
+      this.setState({ group })
     }
   }
   
-  handleGuestNameChange(e) {
-    const rsvp = Object.assign(this.state.rsvp, { guestName: e.target.value})
-    this.setState({ rsvp })
+  handleGuestNameChange(e, id) {
+    const group = {...this.state.group}
+    group[id].guestName = e.target.value
+    
+    this.setState({ group })
   }
   
   handleSubmit(e) {
     e.preventDefault()
-    const rsvp = Object.assign(this.state.rsvp, { responded: true })
-    this.setState({ rsvp })
+    const group = Object.keys(this.state.group).reduce((acc, id) => {
+      acc[id] = {...this.state.group[id], responded: true}
+      return acc
+    }, {})
+    
+    this.setState({ group })
     
     base.post(`rsvps/${this.props.match.params.rsvpId}`, {
-      data: rsvp
+      data: group
     }).then(() => {
       this.setState({ submitted: true })
     }).catch(err => {
@@ -89,63 +103,68 @@ class RsvpDetail extends React.Component {
     )
   }
   
-  renderRsvpForm() {
-    const rsvp = this.state.rsvp
-    return (
-      <form name="rsvpForm" onSubmit={this.handleSubmit}>
-        <div className="ba b--white-10 br1 mt4">
-          <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">{ rsvp.firstName } { rsvp.lastName }</h3>
-          {
-            rsvp.responded &&
-            <div className="bb b--white-10 ph2 ph3-ns pv3 white-80">
-              <strong className="gold">Note:</strong> You have already submitted your RSVP. However, you may still resubmit if you would like to change your reply.
-            </div>
-          }
+  renderGuestCard() {
+    return Object.keys(this.state.group).map(id => {
+      const rsvp = this.state.group[id]
+      return (
+        <div className="ba b--white-10 br1 mb4" key={id}>
+          <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">{ rsvp.firstName } { rsvp.lastName }</h3>          
           
           <div className="ph2 pv3 ph3-ns">
-            
             <div className="flex flex-column items-start mb3">
               <h4 className="f5 b gold">Will you be attending?</h4>
-              <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setAttending(true)}>
+              <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setAttending(id, true)}>
                 <i className={'gold mr2 icon icon-' + (rsvp.attending === true ? 'dot-circle-o' : 'circle-o')} /> Yes
               </span>
-              <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setAttending(false)}>
+              <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setAttending(id, false)}>
                 <i className={'gold mr2 icon icon-' + (rsvp.attending === false ? 'dot-circle-o' : 'circle-o')} /> No
               </span>
             </div>
             
             {
-              rsvp.getsGuest &&
+              rsvp.getsGuest && rsvp.attending &&
               <div className="flex flex-column items-start mb3">
                 <h4 className="f5 b gold">Are you bringing a guest?</h4>
-                <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setGuestAttending(true)}>
+                <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setGuestAttending(id, true)}>
                   <i className={'gold mr2 icon icon-' + (rsvp.guestAttending === true ? 'dot-circle-o' : 'circle-o')} /> Yes
                 </span>
-                <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setGuestAttending(false)}>
+                <span className="pv2 mb1 ph3 pointer" onClick={(e) => this.setGuestAttending(id, false)}>
                   <i className={'gold mr2 icon icon-' + (rsvp.guestAttending === false ? 'dot-circle-o' : 'circle-o')} /> No
                 </span>
               </div>
             }
             
             {
-              rsvp.guestAttending &&
+              rsvp.guestAttending && rsvp.attending && rsvp.getsGuest &&
               <div className="flex flex-column items-start mb3">
                 <h4 className="f5 b gold mb3">What is your guest's name?</h4>
                 <input className="input-reset white bg-transparent ba b--white-30 b--gold-focus outline-0 pa3 w-100 w-50-ns br2"
                        placeholder="Jane Doe"
                        type="text"
                        name="guestName"
-                       value={this.state.rsvp.guestName}
-                       onChange={this.handleGuestNameChange} />
+                       value={rsvp.guestName}
+                       onChange={(e) => this.handleGuestNameChange(e, id)} />
               </div>
             }
             
-            <input className="input-reset outline-0 f6 f5-ns pointer br2 bn ph3 pv2 pv3-ns mb2 dib white bg-gold w-100 w4-ns"
-                   type="submit"
-                   value="Submit" />
           </div>
         </div>
-      </form>
+      )
+    })
+  }
+  
+  renderRsvpForm() {
+    return (
+      <div>
+        <h3 className="gold mb4 fw4 f5 f4-ns">Below are cards for each person invited as part of this RSVP. If you are allowed to bring a guest, there will be an option on your card for that.</h3>
+        <form name="rsvpForm" onSubmit={this.handleSubmit}>
+          {this.renderGuestCard()}
+          
+          <input className="input-reset outline-0 f6 f5-ns pointer br2 bn ph3 pv2 pv3-ns mb2 dib white bg-gold w-100 w4-ns"
+            type="submit"
+            value="Submit" />
+        </form>
+      </div>
     )
   }
   
