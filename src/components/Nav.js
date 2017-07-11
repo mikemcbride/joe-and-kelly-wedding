@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { Link, NavLink } from 'react-router-dom'
 import pages from '../data/pages'
 
@@ -62,7 +63,7 @@ class Nav extends React.Component {
 }
 
 Nav.contextTypes = {
-	router: React.PropTypes.object
+	router: PropTypes.object
 }
 
 export default Nav
