@@ -46,7 +46,7 @@ class Nav extends React.Component {
         <nav className="dn-l flex justify-between items-center bb b--white-10 relative z-3">
           <Link to="/" className="f6 b ttu dib pa3 gold z-1">Joe + Kelly</Link>
           <span className="f6 b ttu dib pa3 pointer" onClick={(e) => this.toggleMenu(e)}>Menu<i className="icon icon-menu ml2"></i></span>
-          <div id="nav-list" className={`fixed z-2 w-100 bg-near-black ${navOpenClass}`}>
+          <div id="nav-list" className={`fixed z-2 w-100 bg-near-black overflow-y-auto ${navOpenClass}`}>
             <div className="f6 b ttu pa3 bb b--white-10 flex items-center justify-end pointer">
               <span className="dib" onClick={(e) => this.toggleMenu(e)}>Close<i className="icon icon-close ml2"></i></span>
             </div>
