@@ -1,5 +1,5 @@
 const reception = {
-  "venue": "28 Event Space",
+  "venue": "The Kansas City Room at 28 Event Space",
   "address": "1300 W 28 St, Kansas City, MO 64108",
   "website": "28event.com",
   "time": {
