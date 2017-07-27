@@ -2,7 +2,7 @@ const attractions = {
   joe: {
     bbq: "No trip is complete without some BBQ. Head to the iconic gas station for the best in town – Joe's KC (formerly Oklahoma Joe's). Pro tip – call ahead, skip the line. And order the Z-Man with pork.",
     fun: "Check out the College Basketball Experience and Hall of Fame at the Sprint Center. Be sure to bring your basketball shorts – this experience is interactive. I took my brothers and taught them all how to properly dunk.",
-    drink: "Up/Down – like Chuck E. Cheese, but for adults. This bar was tons of old school video games, including X-Men, Mortal Kombat, NBA Jam, NFL Blitz, the Simpson's, and more."
+    drink: "Up/Down – like Chuck E. Cheese, but for adults. This bar has tons of old school video games, including X-Men, Mortal Kombat, NBA Jam, NFL Blitz, the Simpson's, and more."
   },
   kelly: {
     bbq: "Q-39; also try Beer Kitchen in Westport if you are wanting something that isn’t BBQ.",

@@ -28,27 +28,27 @@ const party = {
       bio: "Sorority sister",
       image: "lindsey.jpg"
     },
-    {
-      name: "Hannah Sperandio",
-      id: "hannah-sperandio",
-      title: "Attendant",
-      bio: "Sorority sister",
-      image: "hannah.jpg"
-    },
-    {
-      name: "Alex Owens",
-      id: "alex-owens",
-      title: "Attendant",
-      bio: "Sorority sister",
-      image: "alex.jpg"
-    },
-    {
-      name: "Claire Hunt",
-      id: "claire-hunt",
-      title: "Attendant",
-      bio: "Sorority sister",
-      image: "claire.jpg"
-    }
+    // {
+    //   name: "Hannah Sperandio",
+    //   id: "hannah-sperandio",
+    //   title: "Attendant",
+    //   bio: "Sorority sister",
+    //   image: "hannah.jpg"
+    // },
+    // {
+    //   name: "Alex Owens",
+    //   id: "alex-owens",
+    //   title: "Attendant",
+    //   bio: "Sorority sister",
+    //   image: "alex.jpg"
+    // },
+    // {
+    //   name: "Claire Hunt",
+    //   id: "claire-hunt",
+    //   title: "Attendant",
+    //   bio: "Sorority sister",
+    //   image: "claire.jpg"
+    // }
   ],
   gentlemen: [
     {
@@ -79,27 +79,27 @@ const party = {
       bio: "Childhood friend",
       image: "mike.jpg"
     },
-    {
-      name: "Jason Kramer",
-      id: "jason-kramer",
-      title: "Usher",
-      bio: "Friend from Rockhurst",
-      image: "jason.jpg"
-    },
-    {
-      name: "David Wallisch",
-      id: "david-wallisch",
-      title: "Usher",
-      bio: "Friend from Rockhurst",
-      image: "david.jpg"
-    },
-    {
-      name: "Kevin Roy",
-      id: "kevin-roy",
-      title: "Usher",
-      bio: "Friend from Rockhurst",
-      image: "kevin.jpg"
-    }
+    // {
+    //   name: "Jason Kramer",
+    //   id: "jason-kramer",
+    //   title: "Usher",
+    //   bio: "Friend from Rockhurst",
+    //   image: "jason.jpg"
+    // },
+    // {
+    //   name: "David Wallisch",
+    //   id: "david-wallisch",
+    //   title: "Usher",
+    //   bio: "Friend from Rockhurst",
+    //   image: "david.jpg"
+    // },
+    // {
+    //   name: "Kevin Roy",
+    //   id: "kevin-roy",
+    //   title: "Usher",
+    //   bio: "Friend from Rockhurst",
+    //   image: "kevin.jpg"
+    // }
   ]
 }
 
