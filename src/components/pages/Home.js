@@ -4,7 +4,7 @@ import Banner from '../../img/banner.jpg'
 
 export const Home = () => (
   <Page>
-    <p className="tc mb4">Welcome! Joe and Kelly like cats and they also like pizza. Enjoy the site!</p>
+    <p className="tc mb4">Joe and Kelly are getting married!</p>
     <img src={Banner} alt="banner" className="db center" />
   </Page>
 )
