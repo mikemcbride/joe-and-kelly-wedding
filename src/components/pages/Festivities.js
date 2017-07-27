@@ -10,26 +10,31 @@ export const Festivities = () => (
       <p className="mb4">{ ceremony.info }</p>
       <div className="ba b--white-10 br1 mt4">
         <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">{ ceremony.venue }</h3>
-        <div className="ph2 pv3 ph3-ns">
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
-            <span className="flex-auto"><a className="hover-gold" href={ ceremony.map.url } target="_blank">{ ceremony.address }</a></span>
+        <div className="ph2 pv3 ph3-ns flex">
+          <div className="flex-auto">
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
+              <span className="flex-auto"><a className="hover-gold" href={ ceremony.map.url } target="_blank">{ ceremony.address }</a></span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
+              <span className="flex-auto">{ ceremony.date }</span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-clock f4"></span>
+              <span className="flex-auto">{ ceremony.time }</span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
+              <span className="flex-auto"><a href={`http://www.${ceremony.website}`} className="hover-gold" target="_blank">{ ceremony.website }</a></span>
+            </div>
           </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
-            <span className="flex-auto">{ ceremony.date }</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-clock f4"></span>
-            <span className="flex-auto">{ ceremony.time }</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
-            <span className="flex-auto"><a href={`http://www.${ceremony.website}`} className="hover-gold" target="_blank">{ ceremony.website }</a></span>
+          <div className="dn db-l">
+            <iframe src={ ceremony.map.embed.src } width="100%" height={ `${ceremony.map.embed.small}` } frameBorder="0" className="bn" allowFullScreen></iframe>
           </div>
         </div>
       </div>
-      <div className="ph3-l f6 f5-ns">
+      <div className="ph3-l f6 f5-ns dn-l">
         <div className="mt4 pa2 ph3-ns">
           <div className="db dn-ns">
             <iframe src={ ceremony.map.embed.src } width="100%" height={ `${ceremony.map.embed.small}` } frameBorder="0" className="bn" allowFullScreen></iframe>
@@ -37,11 +42,7 @@ export const Festivities = () => (
           <div className="dn db-m">
             <iframe src={ ceremony.map.embed.src } width="100%" height={ `${ceremony.map.embed.medium}` } frameBorder="0" className="bn" allowFullScreen></iframe>
           </div>
-          <div className="dn db-l">
-            <iframe src={ ceremony.map.embed.src } width="100%" height={ `${ceremony.map.embed.large}` } frameBorder="0" className="bn" allowFullScreen></iframe>
-          </div>
         </div>
-        
       </div>
     </section>
 
@@ -52,40 +53,42 @@ export const Festivities = () => (
       <p className="mb3">Never used Uber before? Download the app on your smartphone and enter this code for a free ride: <span className="gold">joec7977ue</span></p>
       <div className="ba b--white-10 br1 mt4">
         <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">{ reception.venue }</h3>
-        <div className="ph2 pv3 ph3-ns">
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
-            <span className="flex-auto"><a className="hover-gold" href={ reception.map.url } target="_blank">{ reception.address }</a></span>
+        <div className="ph2 pv3 ph3-ns flex">
+          <div className="flex-auto">
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-map-marker f4"></span>
+              <span className="flex-auto"><a className="hover-gold" href={ reception.map.url } target="_blank">{ reception.address }</a></span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
+              <span className="flex-auto">{ reception.date }</span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-drink f4"></span>
+              <span className="flex-auto">Cocktails: { reception.time.cocktails }</span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-food f4"></span>
+              <span className="flex-auto">Dinner: { reception.time.dinner }</span>
+            </div>
+            <div className="flex items-center pv2">
+              <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
+              <span className="flex-auto"><a href={`http://www.${ reception.website }`} className="hover-gold" target="_blank">{ reception.website }</a></span>
+            </div>
           </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-calendar f4"></span>
-            <span className="flex-auto">{ reception.date }</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-drink f4"></span>
-            <span className="flex-auto">Cocktails: { reception.time.cocktails }</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-food f4"></span>
-            <span className="flex-auto">Dinner: { reception.time.dinner }</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
-            <span className="flex-auto"><a href={`http://www.${ reception.website }`} className="hover-gold" target="_blank">{ reception.website }</a></span>
+          <div className="dn db-l">
+            <iframe src={ reception.map.embed.src } width="100%" height={ `${reception.map.embed.small}` } frameBorder="0" className="bn" allowFullScreen></iframe>
           </div>
         </div>
       </div>
       
-      <div className="ph3-l f6 f5-ns">
+      <div className="ph3-l f6 f5-ns dn-l">
         <div className="mt4 pa2 ph3-ns">
           <div className="db dn-ns">
             <iframe src={ reception.map.embed.src } width="100%" height={ `${reception.map.embed.small}` } frameBorder="0" className="bn" allowFullScreen></iframe>
           </div>
           <div className="dn db-m">
             <iframe src={ reception.map.embed.src } width="100%" height={ `${reception.map.embed.medium}` } frameBorder="0" className="bn" allowFullScreen></iframe>
-          </div>
-          <div className="dn db-l">
-            <iframe src={ reception.map.embed.src } width="100%" height={ `${reception.map.embed.large}` } frameBorder="0" className="bn" allowFullScreen></iframe>
           </div>
         </div>
       </div>
