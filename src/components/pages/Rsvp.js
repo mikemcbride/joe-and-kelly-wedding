@@ -85,7 +85,7 @@ class Rsvp extends React.Component {
             <legend className="pa0 f5 f4-ns mb3 gold">Find your RSVP</legend>
             <div className="cf">
               <input className="f6 f5-l input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br2-ns br--left-ns"
-                      placeholder="Your name..."
+                      placeholder="Your RSVP code..."
                       type="text"
                       name="searchTerm"
                       value={this.state.searchTerm}
