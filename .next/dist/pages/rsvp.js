@@ -187,7 +187,7 @@ var Rsvp = function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 86
         }
-      }, _react2.default.createElement('input', { className: 'f6 f5-l input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br2-ns br--left-ns',
+      }, _react2.default.createElement('input', { className: 'f5 input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br0 br2-ns br--left-ns',
         placeholder: 'Your RSVP code...',
         type: 'text',
         name: 'searchTerm',
@@ -196,7 +196,7 @@ var Rsvp = function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 87
         }
-      }), _react2.default.createElement('button', { className: 'f6 f5-l fw5 button-reset fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br2-ns br--right-ns', type: 'button', onClick: this.handleClick, __source: {
+      }), _react2.default.createElement('button', { className: 'f5 fw5 button-reset ttu fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br0 br2-ns br--right-ns', type: 'button', onClick: this.handleClick, __source: {
           fileName: _jsxFileName,
           lineNumber: 93
         }
@@ -232,7 +232,7 @@ var Rsvp = function (_React$Component) {
           fileName: _jsxFileName,
           lineNumber: 106
         }
-      }, 'Edit Group RSVP \u2192')))), (0, _keys2.default)(this.state.filteredRsvps).filter(function (id) {
+      }, 'Edit RSVP \u2192')))), (0, _keys2.default)(this.state.filteredRsvps).filter(function (id) {
         return _this2.state.filteredRsvps[id].responded === true;
       }).length > 0 && _react2.default.createElement('li', { className: 'last-child-no-border white-80 bb b--white-20 pa3', __source: {
           fileName: _jsxFileName,

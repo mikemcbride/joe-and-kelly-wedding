@@ -84,13 +84,13 @@ class Rsvp extends React.Component {
           <fieldset className="cf bn ma0 pa0">
             <legend className="pa0 f5 f4-ns mb3 gold">Find your RSVP</legend>
             <div className="cf">
-              <input className="f6 f5-l input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br2-ns br--left-ns"
+              <input className="f5 input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br0 br2-ns br--left-ns"
                       placeholder="Your RSVP code..."
                       type="text"
                       name="searchTerm"
                       value={this.state.searchTerm}
                       onChange={this.handleChange} />
-              <button className="f6 f5-l fw5 button-reset fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br2-ns br--right-ns" type="button" onClick={this.handleClick}>Search</button>
+                    <button className="f5 fw5 button-reset ttu fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br0 br2-ns br--right-ns" type="button" onClick={this.handleClick}>Search</button>
             </div>
           </fieldset>
         </form>
@@ -103,7 +103,7 @@ class Rsvp extends React.Component {
                 <div className="flex justify-between">
                   <span className="pa3">Group {this.state.groupId}</span>
                   <Link href={`rsvp-detail?id=${this.state.groupId}`}>
-                    <span className="dib bg-gold white pa3 br2 br--top br--right pointer">Edit Group RSVP →</span>
+                    <span className="dib bg-gold white pa3 br2 br--top br--right pointer">Edit RSVP →</span>
                   </Link>
                 </div>
               </li>
