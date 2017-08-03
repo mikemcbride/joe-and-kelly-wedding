@@ -8,14 +8,6 @@ var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _regenerator = require('babel-runtime/regenerator');
-
-var _regenerator2 = _interopRequireDefault(_regenerator);
-
-var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
-
-var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
-
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
@@ -63,30 +55,6 @@ var Nav = function (_React$Component) {
         activeNavItem: this.props.activeNavItem
       });
     }
-  }], [{
-    key: 'getInitialProps',
-    value: function () {
-      var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
-        return _regenerator2.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                console.log('props getInitialProps', this.props);
-
-              case 1:
-              case 'end':
-                return _context.stop();
-            }
-          }
-        }, _callee, this);
-      }));
-
-      function getInitialProps() {
-        return _ref.apply(this, arguments);
-      }
-
-      return getInitialProps;
-    }()
   }]);
 
   function Nav() {
@@ -114,28 +82,27 @@ var Nav = function (_React$Component) {
   }, {
     key: 'renderNavLink',
     value: function renderNavLink(page, activeNavItem) {
-      console.log('active nav item', activeNavItem);
       var activeClass = activeNavItem === page.name ? 'active' : '';
-      return _react2.default.createElement(_link2.default, { href: page.url, key: page.url, __source: {
+      return _react2.default.createElement(_link2.default, { prefetch: true, href: page.url, key: page.url, __source: {
           fileName: _jsxFileName,
-          lineNumber: 38
+          lineNumber: 33
         }
       }, _react2.default.createElement('a', { className: activeClass + ' f6 b nav-link bb bt bw2 b--transparent ttu dib pv3 ph2 ph3-ns', __source: {
           fileName: _jsxFileName,
-          lineNumber: 39
+          lineNumber: 34
         }
       }, page.title));
     }
   }, {
     key: 'renderSideNavLink',
     value: function renderSideNavLink(page) {
-      return _react2.default.createElement(_link2.default, { href: page.url, key: page.url, __source: {
+      return _react2.default.createElement(_link2.default, { prefetch: true, href: page.url, key: page.url, __source: {
           fileName: _jsxFileName,
-          lineNumber: 46
+          lineNumber: 41
         }
       }, _react2.default.createElement('a', { className: 'f6 b nav-link bb bt bw2 b--transparent ttu db pa3 tr', __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 42
         }
       }, page.title));
     }
@@ -149,51 +116,51 @@ var Nav = function (_React$Component) {
       return _react2.default.createElement('div', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 51
         }
       }, _react2.default.createElement('nav', { className: 'dn-l flex justify-between items-center bb b--white-10 relative z-3', __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 52
         }
       }, _react2.default.createElement(_link2.default, { href: '/', __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 53
         }
       }, _react2.default.createElement('a', { className: 'f6 b ttu dib pa3 gold z-1', __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 53
         }
       }, 'Joe + Kelly')), _react2.default.createElement('span', { className: 'f6 b ttu dib pa3 pointer', onClick: function onClick(e) {
           return _this2.toggleMenu(e);
         }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 54
         }
       }, 'Menu', _react2.default.createElement('i', { className: 'icon icon-menu ml2', __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 54
         }
       })), _react2.default.createElement('div', { id: 'nav-list', className: 'fixed z-2 w-100 bg-near-black overflow-y-auto ' + navOpenClass, __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 55
         }
       }, _react2.default.createElement('div', { className: 'f6 b ttu pa3 bb b--white-10 flex items-center justify-end pointer', __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 56
         }
       }, _react2.default.createElement('span', { className: 'dib', onClick: function onClick(e) {
           return _this2.toggleMenu(e);
         }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 57
         }
       }, 'Close', _react2.default.createElement('i', { className: 'icon icon-close ml2', __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 57
         }
       }))), _pages2.default.map(this.renderSideNavLink))), _react2.default.createElement('nav', { className: 'dn flex-l items-center justify-center bb b--white-10', __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 63
         }
       }, _pages2.default.map(function (page) {
         return _this2.renderNavLink(page, _this2.state.activeNavItem);

@@ -4,10 +4,6 @@ import Link from 'next/link'
 import pages from '../data/pages'
 
 class Nav extends React.Component {
-  static async getInitialProps() {
-    console.log('props getInitialProps', this.props)
-  }
-  
   componentWillMount() {
     this.setState({
       activeNavItem: this.props.activeNavItem
@@ -32,10 +28,9 @@ class Nav extends React.Component {
   }
   
   renderNavLink(page, activeNavItem) {
-    console.log('active nav item', activeNavItem)
     const activeClass = activeNavItem === page.name ? 'active' : ''
     return (
-      <Link href={page.url} key={page.url}>
+      <Link prefetch href={page.url} key={page.url}>
         <a className={`${activeClass} f6 b nav-link bb bt bw2 b--transparent ttu dib pv3 ph2 ph3-ns`}>{page.title}</a>
       </Link>
     )
@@ -43,7 +38,7 @@ class Nav extends React.Component {
   
   renderSideNavLink(page) {
     return (
-      <Link href={ page.url } key={ page.url }>
+      <Link prefetch href={ page.url } key={ page.url }>
         <a className="f6 b nav-link bb bt bw2 b--transparent ttu db pa3 tr">{ page.title }</a>
       </Link>
     )
