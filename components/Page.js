@@ -4,7 +4,7 @@ import Head from 'next/head'
 
 export default ({ activeNavItem, children }) => {
   return (
-    <div className="min-vh-100 z-1 flex flex-column">
+    <div className="base-styles min-vh-100 z-1 flex flex-column">
       <Head>
         <title>Collins Conlon Wedding</title>
         <meta charSet='utf-8' />
