@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Page from '../Page'
-import base from '../../base'
+import Link from 'next/link'
+import Page from '../components/Page'
+import base from '../base'
 
 class Rsvp extends React.Component {
   constructor() {
@@ -73,7 +73,7 @@ class Rsvp extends React.Component {
   
   render() {
     return (
-      <Page>
+      <Page activeNavItem="rsvp">
         <p className="mb3 lh-copy ph3">
           To find your RSVP, type the code from your invite into the box and click "Search".
           Click "Edit Group RSVP" and fill in the form. When finished, click Submit.
@@ -102,8 +102,8 @@ class Rsvp extends React.Component {
               <li className="last-child-no-border gold bb b--white-20">
                 <div className="flex justify-between">
                   <span className="pa3">Group {this.state.groupId}</span>
-                  <Link to={`rsvp/${this.state.groupId}`}>
-                    <span className="dib bg-gold white pa3 br2 br--top br--right">Edit Group RSVP →</span>
+                  <Link href={`rsvp-detail?id=${this.state.groupId}`}>
+                    <span className="dib bg-gold white pa3 br2 br--top br--right pointer">Edit Group RSVP →</span>
                   </Link>
                 </div>
               </li>

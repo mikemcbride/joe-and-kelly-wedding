@@ -1,9 +1,9 @@
 import React from 'react'
-import Page from '../Page'
-import attractions from '../../data/attractions'
+import Page from '../components/Page'
+import attractions from '../data/attractions'
 
-export const Attractions = () => (
-  <Page>
+export default () => (
+  <Page activeNavItem="attractions">
     <p className="mb4">Looking for some fun things to do around KC? Here’s what the couple suggests:</p>
     <div className="ba b--white-10 br1 mb4">
       <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">Joe's Picks</h3>

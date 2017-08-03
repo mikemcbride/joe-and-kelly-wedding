@@ -1,10 +1,10 @@
 import React from 'react'
-import Page from '../Page'
-import ceremony from '../../data/ceremony'
-import reception from '../../data/reception'
+import Page from '../components/Page'
+import ceremony from '../data/ceremony'
+import reception from '../data/reception'
 
-export const Festivities = () => (
-  <Page>
+export default () => (
+  <Page activeNavItem="festivities">
     <section className="mb4 mb5-ns">
       <h1 className="f3 b ttu gold mt0 mb4 pb2 bb bw1">Ceremony</h1>
       <p className="mb4">{ ceremony.info }</p>

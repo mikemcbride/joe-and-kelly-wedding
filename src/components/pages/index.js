@@ -1,7 +1,0 @@
-export {Home} from './Home'
-export {Story} from './Story'
-export {Party} from './Party'
-export {Festivities} from './Festivities'
-export {Accommodations} from './Accommodations'
-export {Attractions} from './Attractions'
-export {Registry} from './Registry'

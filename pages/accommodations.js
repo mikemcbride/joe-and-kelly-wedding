@@ -1,9 +1,9 @@
 import React from 'react'
-import Page from '../Page'
-import hotel from '../../data/hotel'
+import Page from '../components/Page'
+import hotel from '../data/hotel'
 
-export const Accommodations = () => (
-  <Page>
+export default () => (
+  <Page activeNavItem="accommodations">
     <p className="mb4">For the convenience of our guests, we have reserved a block of rooms at the nearby Aladdin Hotel. In order to ensure availability and the discounted rate, please book by October 25, 2017.</p>
     <div className="ba b--white-10 br1">
       <h3 className="f5 f4-ns b ph2 ph3-ns pv3 bb b--white-10 ttu gold mv0">{ hotel.name }</h3>

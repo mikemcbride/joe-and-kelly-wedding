@@ -1,9 +1,9 @@
 import React from 'react'
-import Page from '../Page'
-import story from '../../data/story'
+import Page from '../components/Page'
+import story from '../data/story'
 
-export const Story = () => (
-  <Page>
+export default () => (
+  <Page activeNavItem="story">
     <div className="lh-copy">
       <p className="mb4">Joe and Kelly met at the University of Missouri in the fall of 2012.</p>
       <h3 className="f4 fl dib pa3 ba mr2 b ttu gold mb0 mt1">Joe</h3>

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import Page from '../Page'
-import base from '../../base'
+import Link from 'next/link'
+import Page from '../components/Page'
+import base from '../base'
 
 
 class RsvpDetail extends React.Component {
@@ -20,7 +20,7 @@ class RsvpDetail extends React.Component {
   }
   
   componentDidMount() {
-    base.fetch(`rsvps/${this.props.match.params.rsvpId}`, {
+    base.fetch(`rsvps/${this.props.url.query.id}`, {
       context: this
     }).then(data => {
       if (Object.keys(data).length === 0) {
@@ -80,7 +80,7 @@ class RsvpDetail extends React.Component {
     
     this.setState({ group })
     
-    base.post(`rsvps/${this.props.match.params.rsvpId}`, {
+    base.post(`rsvps/${this.props.url.query.id}`, {
       data: group
     }).then(() => {
       this.setState({ submitted: true })
@@ -98,7 +98,9 @@ class RsvpDetail extends React.Component {
     return (
       <div className="mw6 tc center">
         <div className="mb4 f5 f4-ns">Thanks! We've received your RSVP.</div>
-        <Link to="/rsvp" className="outline-0 f6 f5-ns link no-underline-hover pointer br2 bn ph3 pv2 pv3-ns dib white bg-gold w-100 w5-ns">Back to RSVP</Link>
+        <Link href="/rsvp">
+          <a className="outline-0 f6 f5-ns link no-underline-hover pointer br2 bn ph3 pv2 pv3-ns dib white bg-gold w-100 w5-ns">Back to RSVP</a>
+        </Link>
       </div>
     )
   }
@@ -170,7 +172,7 @@ class RsvpDetail extends React.Component {
   
   render() {
     return (
-      <Page>
+      <Page activeNavItem="rsvp">
         {
           this.state.errorMessage !== '' &&
           this.renderErrorMessage()

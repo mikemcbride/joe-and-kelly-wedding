@@ -1,10 +1,10 @@
 import React from 'react'
-import Page from '../Page'
-import PartyMember from '../PartyMember'
-import party from '../../data/party.js'
+import Page from '../components/Page'
+import PartyMember from '../components/PartyMember'
+import party from '../data/party.js'
 
-export const Party = () => (
-  <Page>
+export default () => (
+  <Page activeNavItem="party">
     <section className="mb4 mb5-ns">
       <h1 className="f3 b ttu gold mt0 pb2 bb bw1">The Ladies</h1>
       <div className="flex flex-wrap">
