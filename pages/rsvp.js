@@ -86,7 +86,7 @@ class Rsvp extends React.Component {
             <div className="cf">
               <input className="f5 input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br0 br2-ns br--left-ns"
                       placeholder="Your RSVP code..."
-                      type="text"
+                      type="number"
                       name="searchTerm"
                       value={this.state.searchTerm}
                       onChange={this.handleChange} />

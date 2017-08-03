@@ -2042,3 +2042,5 @@ a.hover-gold:active { color: #ad974f; text-decoration: none; }
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   text-rendering: geometricPrecision;
 }
+
+button, select, input, textarea { font-family: inherit; }

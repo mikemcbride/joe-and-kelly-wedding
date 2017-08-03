@@ -99,7 +99,7 @@ class RsvpDetail extends React.Component {
       <div className="mw6 tc center">
         <div className="mb4 f5 f4-ns">Thanks! We've received your RSVP.</div>
         <Link href="/rsvp">
-          <a className="outline-0 f6 f5-ns no-underline-hover pointer br2 bn ph3 pv2 pv3-ns dib white bg-gold w-100 w5-ns">Back to RSVP</a>
+          <a className="outline-0 f5 no-underline-hover pointer br2 bn pa3 dib white bg-gold w-100 w5-ns">Back to RSVP</a>
         </Link>
       </div>
     )
@@ -162,7 +162,7 @@ class RsvpDetail extends React.Component {
         <form name="rsvpForm" onSubmit={this.handleSubmit}>
           {this.renderGuestCard()}
           
-          <input className="input-reset outline-0 f6 f5-ns pointer br2 bn ph3 pv2 pv3-ns mb2 dib white bg-gold w-100 w4-ns"
+          <input className="input-reset outline-0 f5 pointer br2 bn pa3 mb2 dib white bg-gold w-100 w4-ns"
             type="submit"
             value="Submit" />
         </form>
