@@ -24,7 +24,7 @@ exports.default = function (_ref) {
   var activeNavItem = _ref.activeNavItem,
       children = _ref.children;
 
-  return _react2.default.createElement('div', { className: 'min-vh-100 z-1 flex flex-column', __source: {
+  return _react2.default.createElement('div', { className: 'base-styles min-vh-100 z-1 flex flex-column', __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     }
