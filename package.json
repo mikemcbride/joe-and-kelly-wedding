@@ -5,7 +5,7 @@
   "homepage": "https://collinsconlonwedding.com",
   "dependencies": {
     "history": "^4.5.0",
-    "next": "^3.0.1-beta.20",
+    "next": "^3.0.1",
     "prop-types": "^15.5.10",
     "re-base": "^2.5.1",
     "react": "^15.6.1",
