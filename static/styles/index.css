@@ -769,6 +769,10 @@ img { max-width: 100%; }
 .bottom-0 { bottom: 0; }
 .bottom-1 { bottom: 6px; }
 .left-0 { left: 0; }
+.absolute-center {
+  left: 50%;
+  transform: translateX(-50%);
+}
 /* end Tachyons */
 /* custom site styles */
 html { font-size: 16px; box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
