@@ -15,7 +15,10 @@
     "start": "next start"
   },
   "now": {
-    "alias": "www.collinsconlonwedding.com",
+    "alias":[
+      "www.collinsconlonwedding.com",
+      "collinsconlonwedding.com"
+    ],
     "name": "joe-and-kelly-wedding"
   }
 }
