@@ -10,12 +10,15 @@ class GuestList extends React.Component {
     this.setAttendingFilter = this.setAttendingFilter.bind(this)
     this.setRespondedFilter = this.setRespondedFilter.bind(this)
     this.filterRsvps = this.filterRsvps.bind(this)
+    this.nameFilter = this.nameFilter.bind(this)
+    this.setTextFilter = this.setTextFilter.bind(this)
     
     this.state = {
       rsvps: [],
       filteredRsvps: [],
       attendingFilter: 'all',
-      respondedFilter: 'all'
+      respondedFilter: 'all',
+      textFilter: ''
     }
   }
   
@@ -51,13 +54,36 @@ class GuestList extends React.Component {
     this.setState({ respondedFilter: val })
   }
   
+  setTextFilter(e) {
+    this.setState({ textFilter: e.target.value })
+  }
+  
+  nameFilter(val, item) {
+    // if filter val is empty string, include the result
+    if (val === '') return true
+    
+    const fn = item.firstName.toLowerCase()
+    const ln = item.lastName.toLowerCase()
+    const gn = item.guestName.toLowerCase()
+    const lcv = val.toLowerCase()
+    
+    // otherwise, check if the term is somewhere in the first, last, or guest name field
+    return (
+      fn.indexOf(lcv) > -1 ||
+      ln.indexOf(lcv) > -1 ||
+      gn.indexOf(lcv) > -1
+    )
+  }
+  
   filterRsvps(rsvp) {
     const attending = this.state.attendingFilter
     const responded = this.state.respondedFilter
+    const textFilter = this.state.textFilter
     
     return (
       (attending === 'all' || rsvp.attending === attending) &&
-      (responded === 'all' || rsvp.responded === responded)
+      (responded === 'all' || rsvp.responded === responded) &&
+      (this.nameFilter(textFilter, rsvp))
     )
   }
   
@@ -112,6 +138,15 @@ class GuestList extends React.Component {
                   </div>
                 </div>
               </div>
+              
+              <div>
+                <input className="f5 input-reset db white bg-transparent ba b--gold outline-0 pa3 w-100 br2 mb3"
+                        placeholder="Filter results..."
+                        type="text"
+                        value={this.state.textFilter}
+                        onChange={this.setTextFilter} />
+              </div>
+              
               <table className="collapse w-100 pa2 ba b--mid-gray">
                 <thead className="gold">
                   <tr>
