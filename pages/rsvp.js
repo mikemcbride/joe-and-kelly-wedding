@@ -13,7 +13,9 @@ class Rsvp extends React.Component {
     
     this.state = {
       rsvps: {},
-      searchTerm: '',
+      searchTerm1: '',
+      searchTerm2: '',
+      searchTerm3: '',
       filteredRsvps: {},
       groupId: '',
       notFound: false
@@ -31,8 +33,10 @@ class Rsvp extends React.Component {
     base.removeBinding(this.ref)
   }
   
-  handleChange(e) {
-    this.setState({searchTerm: e.target.value})
+  handleChange(e, property) {
+    const obj = {[property]: e.target.value}
+    console.log('obj:', obj)
+    this.setState(obj)
   }
   
   handleClick(e) {
@@ -45,12 +49,13 @@ class Rsvp extends React.Component {
   }
   
   findRsvp() {
-    const item = this.state.rsvps[this.state.searchTerm]
+    const searchTerm = `${this.state.searchTerm1}${this.state.searchTerm2}${this.state.searchTerm3}`
+    const item = this.state.rsvps[searchTerm]
     
     if (item === undefined) {
       this.setState({ filteredRsvps: {}, notFound: true })
     } else {
-      this.setState({ filteredRsvps: item, notFound: false, groupId: this.state.searchTerm })
+      this.setState({ filteredRsvps: item, notFound: false, groupId: searchTerm })
     }
   }
   
@@ -74,23 +79,43 @@ class Rsvp extends React.Component {
   render() {
     return (
       <Page activeNavItem="rsvp">
-        <p className="mb3 lh-copy ph3">
-          To find your RSVP, type the code from your invite into the box and click "Search".
-          Click "Edit Group RSVP" and fill in the form. When finished, click Submit.
-          If you have already responded, your RSVP will have a check mark next to it if you marked <span className="gold">attending</span>, and an "x" if you marked <span className="gold">not attending</span>.
-        </p>
         <div className="dn-ns pt3 mb4 bb b--white-30"></div>
         <form className="mw7 center pa4-ns mb3" onSubmit={this.handleSubmit}>
           <fieldset className="cf bn ma0 pa0">
-            <legend className="pa0 f5 f4-ns mb3 gold">Find your RSVP</legend>
-            <div className="cf">
-              <input className="f5 input-reset fl white bg-transparent ba b--gold outline-0 pa3 w-100 w-75-m w-80-l br0 br2-ns br--left-ns"
-                      placeholder="Your RSVP code..."
-                      type="number"
-                      name="searchTerm"
-                      value={this.state.searchTerm}
-                      onChange={this.handleChange} />
-                    <button className="f5 fw5 button-reset ttu fl pv3 tc ba b--gold bg-gold outline-0 white pointer w-100 w-25-m w-20-l br0 br2-ns br--right-ns" type="button" onClick={this.handleClick}>Search</button>
+            <legend className="pa0 f5 f4-ns mb3 gold">
+              Find your RSVP
+              <p className="body-color f6 f5-ns mb0 mt3">
+                Enter the three digit code from your invite into the boxes and click "Search".
+              </p>
+              <p className="body-color f6 f5-ns mb3">
+                Then click "Edit RSVP" and fill in the form. When finished, click Submit.
+              </p>
+            </legend>
+            <div className="mw5 center tc">
+              <input className="f3 input-reset mh1 white bg-transparent ba b--gold outline-0 ph3 pv4 w3 tc br2"
+                      type="text"
+                      placeholder="0"
+                      maxLength="1"
+                      name="searchTerm1"
+                      value={this.state.searchTerm1}
+                      onChange={(e) => this.handleChange(e, 'searchTerm1')} />
+              <input className="f3 input-reset mh1 white bg-transparent ba b--gold outline-0 ph3 pv4 w3 tc br2"
+                      type="text"
+                      placeholder="0"
+                      maxLength="1"
+                      name="searchTerm2"
+                      value={this.state.searchTerm2}
+                      onChange={(e) => this.handleChange(e, 'searchTerm2')} />
+              <input className="f3 input-reset mh1 white bg-transparent ba b--gold outline-0 ph3 pv4 w3 tc br2"
+                      type="text"
+                      placeholder="0"
+                      maxLength="1"
+                      name="searchTerm3"
+                      value={this.state.searchTerm3}
+                      onChange={(e) => this.handleChange(e, 'searchTerm3')} />
+              <button className="f5 fw5 button-reset pv3 mt3 tc ba b--gold bg-gold outline-0 white pointer w-90 br2"
+                      type="button"
+                      onClick={this.handleClick}>SEARCH</button>
             </div>
           </fieldset>
         </form>

@@ -39,11 +39,11 @@ class GuestList extends React.Component {
     return Object.keys(data).reduce((acc, val) => {
       const group = data[val]
       const groupRsvps = Object.keys(group).map(id => {
-        return Object.assign(group[id], { id })
+        return Object.assign(group[id], { id, groupCode: val })
       })
       
       return [...acc, ...groupRsvps]
-    }, [])
+    }, []).sort((a,b) => (a.groupCode > b.groupCode) ? 1 : ((b.groupCode > a.groupCode) ? -1 : 0))
   }
   
   setAttendingFilter(val) {
@@ -90,6 +90,7 @@ class GuestList extends React.Component {
   renderRsvps() {
     return this.state.rsvps.filter(this.filterRsvps).map(item => (
       <tr key={item.id}>
+        <td className="pa2 ba b--mid-gray">{item.groupCode}</td>
         <td className="pa2 ba b--mid-gray">{item.firstName}</td>
         <td className="pa2 ba b--mid-gray">{item.lastName}</td>
         <td className="pa2 ba b--mid-gray">{item.responded.toString()}</td>
@@ -150,6 +151,7 @@ class GuestList extends React.Component {
               <table className="collapse w-100 pa2 ba b--mid-gray">
                 <thead className="gold">
                   <tr>
+                    <th className="pa2 ba b--mid-gray">Code</th>
                     <th className="pa2 ba b--mid-gray">First Name</th>
                     <th className="pa2 ba b--mid-gray">Last Name</th>
                     <th className="pa2 ba b--mid-gray">Responded</th>

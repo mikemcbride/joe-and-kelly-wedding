@@ -793,6 +793,7 @@ ol { margin-bottom: .5rem; }
 dl { margin-bottom: .5rem; }
 figure { margin-bottom: .5rem; }
 body { color: #eaeaea; background-color: #111; }
+.body-color { color: #eaeaea; }
 a { color: #ad974f; text-decoration: none; }
 a:hover { text-decoration: underline; }
 ul { margin-left: 1rem; }
