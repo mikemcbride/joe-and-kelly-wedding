@@ -1,15 +1,8 @@
 const hotel = {
   "name": "Aladdin Holiday Inn",
   "address": "1215 Wyandotte St, Kansas City, MO 64105",
-  "website": {
-    "url": "https://www.ihg.com/holidayinn/hotels/us/en/kansas-city/mkccc/hoteldetail?cm_mmc=GoogleMaps-_-HI-_-USA-_-MKCCC",
-    "display": "ihg.com"
-  },
   "phone": "1-816-421-8888",
-  "booking": {
-    "link": "https://aws.passkey.com/go/cf75c154",
-    "code": "CCQ"
-  },
+  "bookingCode": "CCQ",
   "notes": "Must book by October 25, 2017. The block will close after this date.",
   "map": {
     "url": "https://goo.gl/maps/p1JmdisZRSr",
