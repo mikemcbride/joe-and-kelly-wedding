@@ -15,7 +15,7 @@ export default () => (
           </div>
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-phone f4"></span>
-            <span className="flex-auto"><a href={`tel:${hotel.website.phone}`} className="hover-gold" target="_blank">{hotel.phone}</a></span>
+            <span className="flex-auto"><a href={`tel:${hotel.phone}`} className="hover-gold" target="_blank">{hotel.phone}</a></span>
           </div>
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-code f4"></span>
@@ -24,10 +24,6 @@ export default () => (
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-link f4"></span>
             <span className="flex-auto"><a href={hotel.booking.link} target="_blank">Click here to book.</a> Use the code from above. If the online booking fails, please call the hotel at the number listed.</span>
-          </div>
-          <div className="flex items-center pv2">
-            <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
-            <span className="flex-auto"><a href={hotel.website.url} className="hover-gold" target="_blank">{hotel.website.display}</a></span>
           </div>
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-info f4"></span>
