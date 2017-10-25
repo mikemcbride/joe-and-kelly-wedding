@@ -23,7 +23,7 @@ export default () => (
           </div>
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-link f4"></span>
-            <span className="flex-auto"><a href={hotel.booking.link} target="_blank">Click here to book. Use the code from above.</a></span>
+            <span className="flex-auto"><a href={hotel.booking.link} target="_blank">Click here to book.</a> Use the code from above. If the online booking fails, please call the hotel at the number listed.</span>
           </div>
           <div className="flex items-center pv2">
             <span className="gold dib address-icon mr3 mr4-ns tc icon icon-globe f4"></span>
