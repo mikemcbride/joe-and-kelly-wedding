@@ -6,7 +6,7 @@ const hotel = {
     "link": "https://aws.passkey.com/go/cf75c154",
     "code": "CCQ"
   },
-  "notes": "Must book by October 25, 2017. The block will close after this date.",
+  "notes": "Must book by November 3, 2017. After this date, you must call the hotel and ask for the block. As long as there are still rooms available you will receive the discounted rate.",
   "map": {
     "url": "https://goo.gl/maps/p1JmdisZRSr",
     "embed": {
